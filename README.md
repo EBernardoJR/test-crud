@@ -1,27 +1,32 @@
 # Get start
-Install packages via npm
+### Install packages via npm
 
     npm i
 
-Now run the project via yarn or npm
+### Now run the project via yarn or npm
 
     yarn start
+
 or
+
     npm start
 
  
-Using Nodemon on backend
+### Using Nodemon - Development
 
-   yarn dev
+    yarn dev
 
 ## Testes - Jest
+
   
     yarn test
+
 or 
+
     npm run test
 
 
-### Endpoints
+## Endpoints
 
 #### `/signup` - Cadastrar usuário ####
 
