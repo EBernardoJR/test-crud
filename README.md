@@ -4,6 +4,7 @@
    - Nodemon;
    - MongoDB;
    - Bcrypt;
+   - JWT-simple;
    - Jest.
    
 # Get start

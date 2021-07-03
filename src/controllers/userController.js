@@ -1,6 +1,9 @@
 const User = require('../models/User')
 const Token = require('../models/Token')
 const bcrypt = require('bcrypt-nodejs')
+const jwt = require('jwt-simple')
+//only dev
+const authSecret = 'jsajowii288239qkwkwaksaosiada'
 
 const encryptPassword = password => {
     const salt = bcrypt.genSaltSync(10)
@@ -43,7 +46,7 @@ module.exports = {
                     createdAt: user.createdAt,
                     updatedAt: user.updatedAt,
                     lastLogin: token.createdAt,
-                    token: token._id
+                    token: jwt.encode(token._id, authSecret)
                 })
 
             })
@@ -67,8 +70,10 @@ module.exports = {
             Error: "incomplete data"
         })
 
+
+
         const token = await Token.findOne({
-            _id: authorization,
+            _id: jwt.decode(authorization, authSecret),
             userId: user_id
         })
 
@@ -150,7 +155,7 @@ module.exports = {
                         createdAt: user.createdAt,
                         updatedAt: user.updatedAt,
                         lastLogin: token.createdAt,
-                        token: token._id
+                        token: jwt.encode(token._id, authSecret)
                     })
                 }).catch(e => {
                     return res.status(500).json({
