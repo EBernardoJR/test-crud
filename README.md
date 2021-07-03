@@ -1,3 +1,11 @@
+# Frameworks/Packages utilizados 
+
+   - Express;
+   - Nodemon;
+   - MongoDB;
+   - Bcrypt;
+   - Jest.
+   
 # Get start
 ### Install packages via npm
 
