@@ -8,6 +8,8 @@ module.exports = {
             price,
         } = req.body
 
+        const { path: url = '' } = req?.file
+
         if(!name) return res.status(400).json({
             Error: "incomplete data"
         })
@@ -16,6 +18,7 @@ module.exports = {
             name,
             price, 
             userId,
+            image: url,
         })
         .then((item) => {
             return res.status(200).json({
