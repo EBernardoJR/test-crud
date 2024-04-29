@@ -16,7 +16,6 @@ module.exports = {
             name,
             email,
             password,
-            phones
         } = req.body
 
         if(!name || !email || !password ) return res.status(400).json({
@@ -34,7 +33,6 @@ module.exports = {
             name,
             email, 
             password: passwordEncrypted,
-            phones
         })
         .then((user) => {
             Token.create({

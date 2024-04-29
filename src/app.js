@@ -5,7 +5,7 @@ const app = express()
 const cors = require('cors')
 
 app.use(express.json())
-mongoose.connect(`mongodb+srv://development_tests:04091999@omnistack.frk0z.mongodb.net/test-crud?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect(`mongodb+srv://emanoel04091999:dTDDcl5WBlbHGqQS@cluster-testes.8s06mil.mongodb.net/?retryWrites=true&w=majority&appName=cluster-testes`, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('DATABASE connected')
 }).catch(() => {
     console.log('Error to connect database')
